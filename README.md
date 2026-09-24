@@ -1,1 +1,1 @@
-# A basic FASTAPI boilerplate with authentication alembi setup
+# A basic FASTAPI boilerplate with authentication and alembic setup
