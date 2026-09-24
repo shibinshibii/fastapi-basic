@@ -1,0 +1,32 @@
+# Python bytecode & cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# Environment Variables & Secrets
+.env
+.env.*
+!.env.example
+
+# Database / SQLite (if generated locally)
+*.db
+*.sqlite3
+
+# IDE / Editor specific settings
+.vscode/
+.idea/
+*.swp
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS specific files
+.DS_Store
+Thumbs.db
