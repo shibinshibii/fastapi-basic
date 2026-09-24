@@ -11,7 +11,7 @@ router = APIRouter()
 #login endpoint
 @router.post("/token", response_model=TokenSchema)
 def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
-    user = authenticate_user(db, form_data.email,form_data.password)
+    user = authenticate_user(db, form_data.username,form_data.password)
     if not user:
         raise  HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
@@ -20,7 +20,7 @@ def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(), db:
         )
     access_token = create_access_token(data={"sub":user.email})
 
-    return {"access token":access_token, "token_type":"bearer"}
+    return {"access_token":access_token, "token_type":"bearer"}
 
 #signup endpoint
 @router.post("/signup", response_model=UserResponse)

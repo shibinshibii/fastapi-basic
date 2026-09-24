@@ -14,6 +14,8 @@ class UserResponse(UserBase):
 class TokenSchema(BaseModel):
     access_token: str
     token_type: str
+    model_config = {"from_attributes": True} 
+
 
 class TokenDataSchema(BaseModel):
     email: str
